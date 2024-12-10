@@ -4,6 +4,8 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
+Process : https://docs.google.com/document/d/1E1JoHTwV-CqYrivomhTK-zohAmt5GLQemSRO6I9WIlA/edit?tab=t.0
+
 Plugin 
 
 ## Project Organization
