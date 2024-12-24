@@ -1,13 +1,12 @@
-// popup.js
-
 document.addEventListener("DOMContentLoaded", async () => {
     const outputDiv = document.getElementById("output");
-    const API_KEY = 'YOUR_API_KEY';  // Replace with your actual YouTube Data API key
-    const API_URL = 'http://my-elb-2062136355.us-east-1.elb.amazonaws.com:80';
+    const API_KEY = 'You API'; // Replace with your actual API key securely
+    const API_URL = 'http://127.0.0.1:8080';
   
     // Get the current tab's URL
     chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
       const url = tabs[0].url;
+      console.log("Current tab URL: ", url);
       const youtubeRegex = /^https:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]{11})/;
       const match = url.match(youtubeRegex);
   
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   
         outputDiv.innerHTML += `<p>Fetched ${comments.length} comments. Performing sentiment analysis...</p>`;
         const predictions = await getSentimentPredictions(comments);
-  
         if (predictions) {
           // Process the predictions to get sentiment counts and sentiment data
           const sentimentCounts = { "1": 0, "0": 0, "-1": 0 };
@@ -116,6 +114,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               </ul>
             </div>`;
         }
+        
       } else {
         outputDiv.innerHTML = "<p>This is not a valid YouTube URL.</p>";
       }
