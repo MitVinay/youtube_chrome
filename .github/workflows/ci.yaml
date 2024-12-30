@@ -40,3 +40,23 @@ jobs:
     - name: Load Model
       run: |
         python src/scripts/load_model.py
+
+    - name: Dagshub Setup and dvc Push
+      env:
+        access_key_id: ${{ secrets.access_key_id }}
+        secret_access_key: ${{ secrets.secret_access_key }}
+      run:
+        dvc push -r origin
+        
+    - name: Git Commit and Push (Bot User)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub provided token for commit
+      run: |
+        # Set git configuration to use bot identity for commit
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+        # Commit changes to DVC files and push to the repository
+        git add .
+        git commit -m "Automated DVC push and updates"
+        git push origin main
