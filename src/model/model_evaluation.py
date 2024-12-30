@@ -15,19 +15,20 @@ from mlflow.models import infer_signature
 import dagshub
 import dotenv
 
-# Set up DagsHub credentials for MLflow trackingss
-dagshub_token = os.getenv("DAGSHUB_PAT")
+# Get the token from environment variables
+dagshub_token = os.getenv('DAGSHUB_TOKEN')
 
-if dagshub_token:
-    print("Token is set")
+if token:
+    dagshub.authenticate(token=dagshub_token)
+    print("Authenticated successfully!")
 else:
-    print("Token is missing")
 
+    print("Authentication token not found!")
 if not dagshub_token:
     raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
 
-os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
-os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
+# os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
+# os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
 
 mlflow.set_tracking_uri("https://dagshub.com/MitVinay/youtube_chrome.mlflow")
 
