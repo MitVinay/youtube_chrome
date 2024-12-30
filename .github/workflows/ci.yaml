@@ -36,3 +36,7 @@ jobs:
       run: |
         echo "Secret fetched successfully"
         dvc repro
+
+    - name: Load Model
+      run: |
+        python src/scripts/load_model.py
