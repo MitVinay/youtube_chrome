@@ -22,6 +22,8 @@ if not dagshub_token:
 os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
 os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
 
+mlflow.set_tracking_uri("https://dagshub.com/MitVinay/youtube_chrome.mlflow")
+
 # logging configuration
 logger = logging.getLogger('model_evaluation')
 logger.setLevel('DEBUG')
@@ -138,7 +140,6 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 def main():
 
     dagshub.init(repo_owner='MitVinay', repo_name='youtube_chrome', mlflow=True)
-    mlflow.set_tracking_uri("https://dagshub.com/MitVinay/youtube_chrome.mlflow")
 
     mlflow.set_experiment('dvc-pipeline-runs')
     
