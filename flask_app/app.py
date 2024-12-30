@@ -22,7 +22,7 @@ import matplotlib.dates as mdates
 app = Flask(__name__)
 CORS(app)
 
-# Define the preprocessing function
+# Define the preprocessing function on
 def preprocess_comment(comment):
     """Apply preprocessing transformations to a comment."""
     try:
