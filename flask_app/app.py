@@ -58,9 +58,10 @@ def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
     mlflow.set_tracking_uri("https://dagshub.com/MitVinay/youtube_chrome.mlflow")
 
     # Specify the model name registered in MLflow
-    model_name = "yt_chrome_plugin_model" # Replace with your MLflow tracking URI
+    model_name = "yt_chrome_plugin_model2" # Replace with your MLflow tracking URI
     # client = MlflowClient()
     model_uri = f"models:/{model_name}/{model_version}"
+    print(model_uri)
     # Attempt to load the model
     try:
         model = mlflow.pyfunc.load_model(model_uri)

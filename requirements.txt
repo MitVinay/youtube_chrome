@@ -1,7 +1,13 @@
-black
-flake8
-isort
-mkdocs
-pip
-python-dotenv
--e .
+dvc
+mlflow
+dagshub
+scikit-learn
+nltk
+numpy
+pandas
+scikit-learn
+lightgbm
+seaborn
+flask_cors
+flask
+wordcloud
