@@ -15,7 +15,7 @@ from mlflow.models import infer_signature
 import dagshub
 import dotenv
 
-# Set up DagsHub credentials for MLflow trackings
+# Set up DagsHub credentials for MLflow trackingss
 dagshub_token = os.getenv("DAGSHUB_PAT")
 print(dagshub_token)
 if not dagshub_token:
