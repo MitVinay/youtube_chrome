@@ -12,3 +12,4 @@ flask_cors
 flask
 wordcloud
 python-dotenv
+dvc[s3]
