@@ -139,7 +139,7 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 
 def main():
 
-    dagshub.init(repo_owner='MitVinay', repo_name='youtube_chrome', mlflow=True)
+    # dagshub.init(repo_owner='MitVinay', repo_name='youtube_chrome', mlflow=True)
 
     mlflow.set_experiment('dvc-pipeline-runs')
     
