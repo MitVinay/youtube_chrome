@@ -35,4 +35,4 @@ jobs:
         DAGSHUB_PAT: ${{ secrets.DAGSHUB_PAT }}
       run: |
         echo "Secret fetched successfully"
-        python src/model/model_evaluation.py
+        dvc repro

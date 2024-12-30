@@ -16,10 +16,10 @@ import dagshub
 import dotenv
 
 
-print("hi"*1000)
+
 # Get the token from environment variables
 dagshub_token = os.getenv('DAGSHUB_TOKEN')
-
+print("dagshub_token", dagshub_token)
 if dagshub_token:
     dagshub.authenticate(token=dagshub_token)
     print("Authenticated successfully!")
