@@ -37,17 +37,13 @@ jobs:
         echo "Secret fetched successfully"
         dvc repro
 
-    - name: Load Model
-      run: |
-        python src/scripts/load_model.py
-
     - name: Dagshub Setup and dvc Push
       env:
         access_key_id: ${{ secrets.access_key_id }}
         secret_access_key: ${{ secrets.secret_access_key }}
       run:
         dvc push -r origin
-        
+
     - name: Git Commit and Push (Bot User)
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub provided token for commit
