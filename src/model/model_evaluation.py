@@ -17,7 +17,12 @@ import dotenv
 
 # Set up DagsHub credentials for MLflow trackingss
 dagshub_token = os.getenv("DAGSHUB_PAT")
-print(dagshub_token)
+
+if dagshub_token:
+    print("Token is set")
+else:
+    print("Token is missing")
+
 if not dagshub_token:
     raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
 
