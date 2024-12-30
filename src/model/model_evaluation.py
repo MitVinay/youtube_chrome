@@ -15,14 +15,8 @@ from mlflow.models import infer_signature
 import dagshub
 import dotenv
 
-# project_dir = os.path.join(os.path.dirname(__file__), os.pardir)
-# dotenv_path = os.path.join(project_dir, '.env')
-# print(dotenv_path)
-# dotenv.load_dotenv("/Users/vinaymittal/Monash/Summer_Vacation/GitHub/youtube_chrome/.env")
-
 # Set up DagsHub credentials for MLflow tracking
 dagshub_token = os.getenv("DAGSHUB_PAT")
-print("*"*100)
 print(dagshub_token)
 if not dagshub_token:
     raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
