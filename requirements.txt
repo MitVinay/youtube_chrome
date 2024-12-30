@@ -11,3 +11,4 @@ seaborn
 flask_cors
 flask
 wordcloud
+python-dotenv
