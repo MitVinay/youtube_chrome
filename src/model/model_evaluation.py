@@ -18,7 +18,7 @@ import dotenv
 # Get the token from environment variables
 dagshub_token = os.getenv('DAGSHUB_TOKEN')
 
-if token:
+if dagshub_token:
     dagshub.authenticate(token=dagshub_token)
     print("Authenticated successfully!")
 else:
