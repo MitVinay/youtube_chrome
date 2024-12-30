@@ -128,6 +128,15 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 
 
 def main():
+
+    # Set up DagsHub credentials for MLflow tracking
+    dagshub_token = os.getenv("DAGSHUB_PAT")
+    if not dagshub_token:
+        raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
+
+    os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
+    os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
+    
     dagshub.init(repo_owner='MitVinay', repo_name='youtube_chrome', mlflow=True)
     mlflow.set_tracking_uri("https://dagshub.com/MitVinay/youtube_chrome.mlflow")
 
