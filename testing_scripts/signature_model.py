@@ -47,7 +47,7 @@ def test_input_shape(load_model_and_vectorizer):
         assert input_df.shape[1] == len(vectorizer.get_feature_names_out()), "Input feature count mismatch"
 
         # Verify the output shape (assuming binary classification with a single output)
-        assert len(prediction) == input_df.shape[0], "Output row count mismatch"
+        assert len(prediction) == input_df.shape[0], "Output rows count mismatch"
 
     except Exception as e:
         pytest.fail(f"Model test failed with error: {e}")
