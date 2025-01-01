@@ -64,4 +64,9 @@ jobs:
     - name: Run load_model test
       run: |
         echo "Running load_model test..."
-        pytest testing_scripts/load_model.py
+        pytest testing_scripts/load_model.py 
+
+    - name: Run model signature test
+      run: |
+        echo "Running load_model test..."
+        pytest testing_scripts/signature_model.py 
