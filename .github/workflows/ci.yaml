@@ -50,7 +50,7 @@ jobs:
 
     - name: Git Commit and Push (Bot User)
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub provided token for commit
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub provided token for commits
       run: |
         # Set git configuration to use bot identity for commit
         git config --global user.name "github-actions[bot]"
