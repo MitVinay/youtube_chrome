@@ -13,3 +13,4 @@ flask
 wordcloud
 python-dotenv
 dvc[s3]
+pytest

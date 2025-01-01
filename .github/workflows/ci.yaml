@@ -60,3 +60,8 @@ jobs:
         git add .
         git commit -m "Automated DVC push and updates"
         git push origin main
+
+    - name: Run load_model test
+      run: |
+        echo "Running load_model test..."
+        pytest testing_scripts/load_model.py
