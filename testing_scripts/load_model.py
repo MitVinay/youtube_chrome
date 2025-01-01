@@ -52,5 +52,5 @@ def test_model_loading(model_and_vectorizer):
     assert hasattr(model, "predict"), "Model does not have the 'predict' method"
     assert hasattr(vectorizer, "transform"), "Vectorizer does not have the 'transform' method"
 
-    print("Model and vectorizer loaded successfully!")
+    print("Model and vectorizer loaded successfully!s")
 
