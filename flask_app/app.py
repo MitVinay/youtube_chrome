@@ -58,7 +58,7 @@ def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
     mlflow.set_tracking_uri("https://dagshub.com/MitVinay/youtube_chrome.mlflow")
 
     # Specify the model name registered in MLflow
-    model_name = "yt_chrome_plugin_model2" # Replace with your MLflow tracking URI
+    model_name = "yt_chrome_plugin_model1" # Replace with your MLflow tracking URI
     # client = MlflowClient()
     model_uri = f"models:/{model_name}/{model_version}"
     print(model_uri)
@@ -77,7 +77,7 @@ def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
     return model, vectorizer
 
 # Initialize the model and vectorizer
-model, vectorizer = load_model_and_vectorizer("yt_chrome_plugin_model", "1", "./tfidf_vectorizer.pkl")
+model, vectorizer = load_model_and_vectorizer("Final_model", "1", "./tfidf_vectorizer.pkl")
 print(f"Model type: {type(model)}")  # Update paths and versions as needed
 
 @app.route('/')
@@ -120,6 +120,7 @@ def predict_with_timestamps():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
+
     
     comments = data.get('comments')
     
@@ -129,13 +130,14 @@ def predict():
     try:
         # Preprocess each comment before vectorizing
         preprocessed_comments = [preprocess_comment(comment) for comment in comments]
-        
+        print(f"Preprocessed Comments: {preprocessed_comments}")
         # Transform comments using the vectorizer
         transformed_comments = vectorizer.transform(preprocessed_comments)
-        
+        print(f"Transformed Comments Shape: {transformed_comments.shape}")
+
         # Convert sparse matrix to a dense DataFrame (same structure as used during training)
         vectorized_df = pd.DataFrame(transformed_comments.toarray(), columns=vectorizer.get_feature_names_out())
-
+        print(f"Vectorized DataFrame Columns: {vectorized_df.columns}")
         # Predict using the loaded model
         predictions = model.predict(vectorized_df).tolist()
         

@@ -42,7 +42,9 @@ jobs:
         DVC_REMOTE_URL : https://dagshub.com/MitVinay/youtube_chrome.s3
         access_key_id: ${{ secrets.access_key_id }}
         secret_access_key: ${{ secrets.secret_access_key }}
-      run:
+      run: |
+        dvc remote modify origin --local access_key_id your_token 
+        dvc remote modify origin --local secret_access_key your_token 
         dvc push -r origin
 
     - name: Git Commit and Push (Bot User)
