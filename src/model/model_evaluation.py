@@ -19,14 +19,9 @@ import dotenv
 
 # Get the token from environment variables
 dagshub_token = os.getenv('DAGSHUB_PAT')
-# dagshub.auth.clear_token_cache()
 
-# if not dagshub_token:
-#     raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
-
-# os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
-# os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
 dagshub.auth.add_app_token(dagshub_token)
+
 dagshub.init(repo_owner='MitVinay', repo_name='youtube_chrome', mlflow=True)
 
 mlflow.set_tracking_uri("https://dagshub.com/MitVinay/youtube_chrome.mlflow")

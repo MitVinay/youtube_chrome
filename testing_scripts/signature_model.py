@@ -50,11 +50,11 @@ def test_model_and_input_shape():
 
     # Create dummy input and test
     try:
-        input_text = "hi how are you"
+        input_text = ["hi how are you"]
         logger.info(f"Input text: {input_text}")
-
-        input_data = vectorizer.transform([input_text])
-        input_df = pd.DataFrame(input_data.toarray(), columns=vectorizer.get_feature_names_out())
+        
+        transformed_comments = vectorizer.transform(input_text)
+        input_df = pd.DataFrame(transformed_comments.toarray(), columns=vectorizer.get_feature_names_out())
         logger.info(f"Transformed input shape: {input_df.shape}")
 
         # Predict using the model
