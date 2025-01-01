@@ -64,9 +64,9 @@ jobs:
     - name: Run load_model test
       run: |
         echo "Running load_model test..."
-        pytest testing_scripts/load_model.py 
+        pytest --disable-warning testing_scripts/load_model.py 
 
     - name: Run model signature test
       run: |
-        echo "Running load_model test.s.."
+        echo "Running model signature test.s.."
         pytest --disable-warnings testing_scripts/signature_model.py
