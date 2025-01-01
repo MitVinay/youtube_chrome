@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 @pytest.fixture(scope="module")
 def model_and_vectorizer():
     """
-    Fixture to load the model and vectorizer once for the entire test module.
+    Fixture to load the model and vdectorizer once for the entire test module.
     """
     # Model and vectorizer details
     model_name = "Final_model"
