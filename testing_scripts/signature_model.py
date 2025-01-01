@@ -52,6 +52,6 @@ def test_input_shape(load_model_and_vectorizer):
     except Exception as e:
         pytest.fail(f"Model test failed with error: {e}")
 
-    print("Test passed: Input shape matches the model's expected number of columns.")
+    print("Test passed: Input shape matches the model's expected number of columnss.")
 
 
