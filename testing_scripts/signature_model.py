@@ -42,8 +42,11 @@ def test_input_shape(load_model_and_vectorizer):
     # Convert sparse matrix to dense DataFrame (as expected by the model)
     input_df = pd.DataFrame(transformed_input.toarray(), columns=vectorizer.get_feature_names_out())
 
-    # Fetch the number of columns expected by the model
-    expected_num_columns = model.metadata.get_input_schema().num_columns
+    # Fetch the input schema of the model
+    input_schema = model.metadata.get_input_schema()
+
+    # Calculate the expected number of columns from the schema
+    expected_num_columns = len(input_schema.columns)
 
     # Assert that the input DataFrame has the same number of columns as the model expects
     assert input_df.shape[1] == expected_num_columns, (
