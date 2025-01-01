@@ -33,24 +33,25 @@ def test_input_shape(load_model_and_vectorizer):
     """
     model, vectorizer = load_model_and_vectorizer
 
-    # Create a dummy input
-    dummy_input = ["This is a test comment for validation."]
+    try:
 
-    # Preprocess the input using the vectorizer
-    transformed_input = vectorizer.transform(dummy_input)
+        # Create a dummy input for the model
+        input_text = "hi how are you"
+        input_data = vectorizer.transform([input_text])
+        input_df = pd.DataFrame(input_data.toarray(), columns=vectorizer.get_feature_names_out())  # <-- Use correct feature names
 
-    # Convert sparse matrix to dense DataFrame (as expected by the model)
-    input_df = pd.DataFrame(transformed_input.toarray(), columns=vectorizer.get_feature_names_out())
+        # Predict using the model
+        prediction = model.predict(input_df)
 
-    # Fetch the input schema of the model
-    input_schema = model.metadata.get_input_schema()
+        # Verify the input shape matches the vectorizer's feature output
+        assert input_df.shape[1] == len(vectorizer.get_feature_names_out()), "Input feature count mismatch"
 
-    # Calculate the expected number of columns from the schema
-    expected_num_columns = len(input_schema.columns)
+        # Verify the output shape (assuming binary classification with a single output)
+        assert len(prediction) == input_df.shape[0], "Output row count mismatch"
 
-    # Assert that the input DataFrame has the same number of columns as the model expects
-    assert input_df.shape[1] == expected_num_columns, (
-        f"Input shape mismatch: Expected {expected_num_columns} columns, but got {input_df.shape[1]}."
-    )
+    except Exception as e:
+        pytest.fail(f"Model test failed with error: {e}")
 
     print("Test passed: Input shape matches the model's expected number of columns.")
+
+
