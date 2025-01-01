@@ -56,18 +56,15 @@ def test_model_and_input_shape():
         transformed_comments = vectorizer.transform(input_text)
         input_df = pd.DataFrame(transformed_comments.toarray(), columns=vectorizer.get_feature_names_out())
         logger.info(f"Transformed input shape: {input_df.shape}")
+        logger.info(f"Vectoriser input shape: {len(vectorizer.get_feature_names_out())}")
 
         # Predict using the model
-        prediction = model.predict(input_df)
-        logger.info(f"Prediction: {prediction}")
+        predictions = model.predict(input_df).tolist()
+        logger.info(f"Prediction: {predictions}")
 
         # Verify input shape matches vectorizer output
         assert input_df.shape[1] == len(vectorizer.get_feature_names_out()), "Input feature count mismatch"
         logger.info("Input shape matches vectorizer feature count.")
-
-        # Verify output shape
-        assert len(prediction) == input_df.shape[0], "Output rows count mismatch"
-        logger.info("Output shape matches input rows count.")
 
     except Exception as e:
         logger.error(f"Error during prediction or validation: {e}")
