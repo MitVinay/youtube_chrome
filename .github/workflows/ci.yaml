@@ -43,6 +43,8 @@ jobs:
         access_key_id: ${{ secrets.access_key_id }}
         secret_access_key: ${{ secrets.secret_access_key }}
       run: |
+        dvc remote add origin s3://dvc
+        dvc remote modify origin endpointurl https://dagshub.com/MitVinay/youtube_chrome.s3
         dvc remote modify origin --local access_key_id $access_key_id
         dvc remote modify origin --local secret_access_key $secret_access_key
         dvc push -r origin
