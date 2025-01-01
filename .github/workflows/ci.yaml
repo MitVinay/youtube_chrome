@@ -64,11 +64,16 @@ jobs:
     - name: Run load_model test
       run: |
         echo "Running load_model test..."
-        pytest --disable-warnings testing_scripts/load_model.py 
+        pytest --disable-warnings testing_scripts/test_load_model.py 
 
     - name: Run Model Signature test
       run: |
         echo "Running Model Signature test test..."
         python testing_scripts/test_model_signature.py 
+    
+    - name: Run performance testing 
+      run: |
+        echo "Running performance test..."
+        pytest --disable-warnings testing_scripts/test_performance_model.py 
 
 
