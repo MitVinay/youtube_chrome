@@ -1,23 +1,19 @@
 import pytest
 import mlflow
-import numpy as np
-import pandas as pd
 import joblib
-
-# Set MLflow tracking URI
-MLFLOW_TRACKING_URI = "https://dagshub.com/MitVinay/youtube_chrome.mlflow"
-mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-
-# Model and vectorizer details
-MODEL_NAME = "Final_model"
-MODEL_VERSION = "1"
-VECTORIZER_PATH = "./tfidf_vectorizer.pkl"
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 @pytest.fixture
 def load_model_and_vectorizer():
     """
     Fixture to load the model and vectorizer.
     """
+    # Model and vectorizer details
+    MODEL_NAME = "Final_model"
+    MODEL_VERSION = "1"
+    VECTORIZER_PATH = "./tfidf_vectorizer.pkl"
+    
     # Load model from MLflow Model Registry
     model_uri = f"models:/{MODEL_NAME}/{MODEL_VERSION}"
     model = mlflow.pyfunc.load_model(model_uri)
@@ -34,7 +30,6 @@ def test_input_shape(load_model_and_vectorizer):
     model, vectorizer = load_model_and_vectorizer
 
     try:
-
         # Create a dummy input for the model
         input_text = "hi how are you"
         input_data = vectorizer.transform([input_text])
@@ -48,10 +43,9 @@ def test_input_shape(load_model_and_vectorizer):
 
         # Verify the output shape (assuming binary classification with a single output)
         assert len(prediction) == input_df.shape[0], "Output rows count mismatch"
-
+    
     except Exception as e:
         pytest.fail(f"Model test failed with error: {e}")
 
-    print("Test passed: Input shape matches the model's expected number of columnss.")
-
-
+    # Test passed
+    assert True, "Test passed: Input shape matches the model's expected number of columns."
