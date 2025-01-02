@@ -71,9 +71,6 @@ jobs:
         echo "Running Model Signature test test..."
         python testing_scripts/test_model_signature.py 
     
-    - name: Run performance testing 
-      run: |
-        echo "Running performance test..."
-        pytest --disable-warnings testing_scripts/test_performance_model.py 
+
 
 

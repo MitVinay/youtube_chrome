@@ -77,7 +77,7 @@ def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
     return model, vectorizer
 
 # Initialize the model and vectorizer
-model, vectorizer = load_model_and_vectorizer("Final_model", "1", "./tfidf_vectorizer.pkl")
+model, vectorizer = load_model_and_vectorizer("Final_model", "1", "tfidf_vectorizer.pkl")
 print(f"Model type: {type(model)}")  # Update paths and versions as needed
 
 @app.route('/')
