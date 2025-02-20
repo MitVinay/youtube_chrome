@@ -71,3 +71,17 @@ YouTube influencers face a significant challenge: understanding audience prefere
 As a result, influencers are left to manually analyze vast volumes of audience comments, a process that is not only time-consuming but also error-prone. With thousands of comments pouring in on each video, it becomes nearly impossible to identify and act on critical insights buried within the feedback. These missed opportunities could have otherwise informed content strategies, strengthened audience connections, and accelerated channel growth.
 This tedious and inefficient process consumes valuable time and often leads to overlooked feedback that could have been instrumental in understanding audience needs and preferences. Influencers need a smarter, more accessible solution to unlock these insights efficiently and effectively.
 The YouTube plugin application addresses two critical business metrics: marketing cost reduction and time efficiency.
+
+
+## Appraoch 
+
+**Initial Phase:**
+Data Collection → Exploratory Data Analysis → Baseline Model → Experiment Tracking
+
+**Second Phase:**
+Monolithic Architecture:
+
+Data Ingestion → Data Preprocessing → Model Training → Model Evaluation → Model Registration
+
+**Third Phase:**
+Develop a Flask API for model serving, and a plugin.
