@@ -189,6 +189,10 @@ Below is the **DAG of the pipeline**:
 
 ![Alt Text](images/Phase-2.png)
 
+Below is the *worflow including toolstack*: 
+![Alt Text](images/phase22.png)
+
+
 
 
 
