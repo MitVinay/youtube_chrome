@@ -152,5 +152,5 @@ The primary libraries used for data cleaning and visualization are:
 ### BaseLine Model
 Random Forest
 On closely examining all the parameters, Accuracy shows a decent value of 0.81.
-Whereas -1 recall has very poor performance. Hence we could interpret that the Making Too Much False Negative Mistake as what it means that it is not able to properly understand the -1 label data and stating it False. 
+Whereas -1 recall has very poor performance. Hence we could interpret that the Making Too Much False Negative Mistake as what it means that it is not able to properly understand the -1 label data and stating it false. 
 ![Alt Text](images/baselinemodel.png)
