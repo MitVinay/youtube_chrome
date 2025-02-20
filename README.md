@@ -153,4 +153,32 @@ The primary libraries used for data cleaning and visualization are:
 Random Forest
 On closely examining all the parameters, Accuracy shows a decent value of 0.81.
 Whereas -1 recall has very poor performance. Hence we could interpret that the Making Too Much False Negative Mistake as what it means that it is not able to properly understand the -1 label data and stating it false. 
+
 ![Alt Text](images/baselinemodel.png)
+
+### Experiment Tracking
+
+Experiment 1- Best Feature Engineering Technique like Bag of Words or TFIDF along with unigram, bigram and trigram
+Result :
+On increasing the n-grams the performance is deteriorating, So the 1-gram has the best performance out of all.
+Moreover it was observed that the performance of the TF-IDF is better than the Bag of words irrespective of the n-gram, So Choosing TF-IDF and 1-gram for the Experiment as the best combination.
+
+![Alt Text](images/ET1.png)
+
+Based on analysis of the graph it is observed that TFIDF with ngram 1 has the best performance in terms of all f1 scores. 
+And also the performance precision and recall is working well. The below runs for not removing stops from the multi gram tokenization, still the unigram was out-performing 
+
+![Alt Text](images/ET2.png)
+
+Experiment 2-  What would be the best max number of features for different engineering techniques?
+	
+Result: Observed a positive correlation between max_features and f1 scores till 5000.
+If we observed the scatter plot we can see the max_feature is attaining maxima
+somewhere between 2000 and 5000.
+
+![Alt Text](images/ET3.png)
+
+The below scatter plot suggests that the model is performing very nicely when max features is 4000. 
+
+
+
