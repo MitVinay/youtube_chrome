@@ -4,9 +4,6 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Process : https://docs.google.com/document/d/1E1JoHTwV-CqYrivomhTK-zohAmt5GLQemSRO6I9WIlA/edit?tab=t.0
-
-Plugin 
 
 ## Project Organization
 
@@ -109,11 +106,10 @@ IDE: Visual Code
 
 As discuss lets discuss more about phase one and phase 2.
 
-## 2. Phase 1 Execution  
 
-We will use **Google Colab, MLflow, and Dagshub** to execute this phase.  
 
 ## Phase 1 Flow  
+We will use **Google Colab, MLflow, and Dagshub** to execute this phase.  
 **Data Collection → Exploratory Data Analysis → Baseline Model → Experiment Tracking**  
 
 ### Data Collection  
@@ -180,6 +176,7 @@ somewhere between 2000 and 5000.
 
 The below scatter plot suggests that the model is performing very nicely when max features is 4000. 
 
+![Alt Text](images/scatter.png)
 
 ## Phase 2 Flow  
 
@@ -192,6 +189,58 @@ Below is the **DAG of the pipeline**:
 Below is the *worflow including toolstack*: 
 
 ![Alt Text](images/phase22.png)
+
+## Phase 3
+### Chrome Plugin for YouTube Comments Fetcher
+
+### Strategy to Build the Backend
+
+1. **Create a Script to Check Model Prediction:**
+   - Create a script to verify whether the model is properly loaded and able to give predictions.
+
+2. **Build the Flask API:**
+   - Develop a Flask API to handle requests for fetching YouTube video comments.
+
+3. **Test the API with Postman:**
+   - Use Postman to test the API and ensure it returns the expected results.
+
+---
+
+## Strategy to Build the Chrome Plugin
+
+1. **Create a New Folder for the Chrome Plugin:**
+   - Create a new directory where the Chrome plugin files will be stored.
+
+2. **Start Building the Chrome Plugin:**
+   - Develop the basic structure of your Chrome plugin using HTML, JavaScript, and CSS.
+
+3. **Enable Developer Mode in Chrome:**
+   - Open `chrome://extensions/` in your browser and turn on Developer Mode.
+
+4. **Condition to Check YouTube URL:**
+   - Implement a condition to check if the current tab's URL is from YouTube.
+     - If it is a YouTube URL, fetch the video ID from the URL.
+     - If the URL is not from YouTube, display an appropriate message, e.g., "This is not a YouTube URL."
+
+5. **Fetch Comments from YouTube:**
+   - Once the video ID is obtained, use the YouTube API to fetch comments for that video.
+
+6. **Error Handling:**
+   - If the URL is not from YouTube, display an error message saying, "Not a YouTube URL."
+
+---
+
+## Testing
+
+- Once the plugin is built and the logic is in place, test the plugin by opening a YouTube video in Chrome and using the plugin to fetch the comments.
+
+---
+
+## Key Notes:
+- Ensure that the YouTube API credentials are set up properly to allow access to video data.
+- Handle errors and edge cases, such as invalid video IDs or restricted videos.
+
+
 
 
 # Architecture
