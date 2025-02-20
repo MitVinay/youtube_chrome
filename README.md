@@ -187,7 +187,7 @@ The primary goal of this phase is to **automate all tasks performed in Phase 1**
 
 Below is the **DAG of the pipeline**: 
 
-![Alt Text](images/dags.png)
+![Alt Text](images/Phase-2.png)
 
 
 
