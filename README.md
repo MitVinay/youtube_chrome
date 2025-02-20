@@ -116,21 +116,22 @@ We will use **Google Colab, MLflow, and Dagshub** to execute this phase.
 ## Phase 1 Flow  
 **Data Collection → Exploratory Data Analysis → Baseline Model → Experiment Tracking**  
 
-## Data Collection  
+### Data Collection  
 The training and testing data is collected from **Kaggle**.  
 
-- **Dataset Link:** [Provide Link]  
+- **Dataset Link:** https://raw.githubusercontent.com/Himanshu-1703/reddit-sentiment-analysis/refs/heads/main/data/reddit.csv  
 - **Summary:**  
   - The dataset contains **comments and sentiment labels**.  
   - There are **three sentiment categories**: **Neutral, Positive, and Negative**.  
 
-## Exploratory Data Analysis  
+### Exploratory Data Analysis
+Google Collab Link : https://colab.research.google.com/drive/1R-X0DBU8BPmGo3-Uf45uBw-5MtVMc-z5  
 The primary libraries used for data cleaning and visualization are:  
 - **textacy**  
 - **pyLDAvis**  
 - **WordCloud**  
 
-## Data Preprocessing Steps  
+#### Data Preprocessing Steps  
 - **Duplicate and Null Value Handling**  
 - **Text Normalization**  
 - **Whitespace Removal**  
@@ -141,9 +142,15 @@ The primary libraries used for data cleaning and visualization are:
 - **Length-Based Filtering**  
 - **Non-Meaningful Row Filtering**  
 
-## Summary of Insights  
+#### Summary of Insights  
 - The dataset is **imbalanced**, so we need to apply techniques like **ADASYN** to address this issue.  
 - **Stop words removal** was performed, but words like *not, but, or* (negative conjunctions) were **kept** to preserve sentiment.  
 - Several **non-English words** were found in the dataset.  
 - The **label distribution** does not vary significantly with **word count**. However, after **6,000 words**, most comments are **positive**, indicating that **longer comments tend to be positive**.  
 - **Word cloud analysis** revealed a high presence of **political comments**, suggesting that the trained model will likely perform better on **political YouTube channels**.  
+
+### BaseLine Model
+Random Forest
+On closely examining all the parameters, Accuracy shows a decent value of 0.81.
+Whereas -1 recall has very poor performance. Hence we could interpret that the Making Too Much False Negative Mistake as what it means that it is not able to properly understand the -1 label data and stating it False. 
+![Alt Text](images/baselinemodel.png)
