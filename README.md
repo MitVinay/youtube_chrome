@@ -223,18 +223,16 @@ Below is the *worflow including toolstack*:
      - If the URL is not from YouTube, display an appropriate message, e.g., "This is not a YouTube URL."
 
 5. **Fetch Comments from YouTube:**
-   - Once the video ID is obtained, use the YouTube API to fetch comments for that video.
+- Once the video ID is obtained, use the YouTube API to fetch comments for that video.
 
 6. **Error Handling:**
-   - If the URL is not from YouTube, display an error message saying, "Not a YouTube URL."
+- If the URL is not from YouTube, display an error message saying, "Not a YouTube URL."
 
----
 
 ## Testing
 
 - Once the plugin is built and the logic is in place, test the plugin by opening a YouTube video in Chrome and using the plugin to fetch the comments.
 
----
 
 ## Key Notes:
 - Ensure that the YouTube API credentials are set up properly to allow access to video data.
