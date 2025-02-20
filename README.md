@@ -250,6 +250,32 @@ Below is the general architecture:
 
 ![Alt Text](images/Architecture.png)
 
+# Summary
+
+### Diverse and Unbiased Data Collection
+To ensure the model's robustness, data was collected from multiple platforms, minimizing bias and increasing generalizability. This comprehensive approach provided a balanced perspective on audience preferences and behavior.
+
+### Addressing Data Imbalance
+The dataset was imbalanced, which posed a challenge. Through rigorous experimentation and aggressive tracking, ADASYN (Adaptive Synthetic Sampling) was employed to address this imbalance effectively. This ensured that both minority and majority classes were well-represented, improving the model's precision and recall, particularly for the minority class.
+
+### Model Selection
+After extensive testing, LightGBM emerged as the optimal choice for this use case. Its efficiency and ability to handle large datasets with speed and accuracy contributed to achieving an impressive 91% accuracy.
+
+### Performance Validation
+Multiple test cases and comments were used to validate the model's responses qualitatively and quantitatively. This ensured that the model not only performed well on metrics but also delivered meaningful and actionable insights.
+
+### Qualitative Analysis: Application UI/UX
+The application's interface is designed for ease of use, enabling seamless interaction between watching videos and analyzing comments simultaneously. It goes beyond providing an overall sentiment, diving deeper into detailed sentiment insights and patterns.
+
+### Instant Exploratory Data Analysis (EDA)
+The tool performs instant EDA on user comments, offering influencers immediate, actionable insights into audience sentiment and preferences. This saves time and enhances productivity while fostering a deeper connection with viewers.
+
+### Scalability 
+The project is designed with scalability in mind, ensuring that it can handle increasing data volumes, user interactions, and evolving content analysis needs. By leveraging a robust architecture and cloud-native technologies, the system can easily scale up or down based on demand. As the user base grows or content complexity increases, the solution adapts without sacrificing performance.
+Additionally, the integration of a CI/CD workflow ensures that updates and enhancements can be delivered continuously, maintaining operational efficiency as the system scales. This approach not only streamlines maintenance but also mitigates issues like model drift and data changes, which are common challenges in growing systems.
+
+
+
 
 # Project with Action
 
@@ -264,6 +290,7 @@ You need to open a YouTube video, go to the Extensions section, and click on the
 ## Step 2:
 Wait for the plugin to fetch and analyse the data giving you a detailed analysis.
 
-![Alt Text](images/setp2.png)
+![Alt Text](images/step2.png)
+
 
 
