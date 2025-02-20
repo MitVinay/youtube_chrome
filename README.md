@@ -61,10 +61,10 @@ Plugin
 
 --------
 
-## Goal
+# Goal
 The goal of the project is to develop a Youtube Chrome Plugin, This extention will empower the youtube influencer to understand the audience anc create content to increase the rech withoout paying a penny to makreting agencies. 
 
-## Vision 
+# Vision 
 **You Not Just get TO the Audience but Get THROUGH the Audience**
 
 YouTube influencers face a significant challenge: understanding audience preferences and content consumption patterns to boost engagement. While marketing agencies and advanced analytics tools provide data-driven insights, these solutions are often prohibitively expensive for many influencers.
@@ -73,7 +73,7 @@ This tedious and inefficient process consumes valuable time and often leads to o
 The YouTube plugin application addresses two critical business metrics: marketing cost reduction and time efficiency.
 
 
-## Appraoch 
+# Appraoch 
 
 **Initial Phase:**
 
@@ -90,11 +90,11 @@ Data Ingestion → Data Preprocessing → Model Training → Model Evaluation �
 Develop a Flask API for model serving, and a plugin.
 
 
-## Roadmap
+# Roadmap
 
 First, I will provide a quick overview of the tool stack I will be using, followed by where each tool will be applied. I will also include the key libraries at a high level.
 
-### Tool Stack Used:
+## 1. Tool Stack Used:
 
 Data Versioning: DVC
 Data Storage: DVC
@@ -105,3 +105,45 @@ Hosting MLflow: Dagshub
 CI/CD Workflow: GitHub Actions
 Containerization: Docker
 API: Flask
+IDE: Visual Code
+
+As discuss lets discuss more about phase one and phase 2.
+
+## 2. Phase 1 Execution  
+
+We will use **Google Colab, MLflow, and Dagshub** to execute this phase.  
+
+## Phase 1 Flow  
+**Data Collection → Exploratory Data Analysis → Baseline Model → Experiment Tracking**  
+
+## Data Collection  
+The training and testing data is collected from **Kaggle**.  
+
+- **Dataset Link:** [Provide Link]  
+- **Summary:**  
+  - The dataset contains **comments and sentiment labels**.  
+  - There are **three sentiment categories**: **Neutral, Positive, and Negative**.  
+
+## Exploratory Data Analysis  
+The primary libraries used for data cleaning and visualization are:  
+- **textacy**  
+- **pyLDAvis**  
+- **WordCloud**  
+
+## Data Preprocessing Steps  
+- **Duplicate and Null Value Handling**  
+- **Text Normalization**  
+- **Whitespace Removal**  
+- **HTML Tags Removal**  
+- **Punctuation Removal**  
+- **Bracket Removal**  
+- **Emoji Removal**  
+- **Length-Based Filtering**  
+- **Non-Meaningful Row Filtering**  
+
+## Summary of Insights  
+- The dataset is **imbalanced**, so we need to apply techniques like **ADASYN** to address this issue.  
+- **Stop words removal** was performed, but words like *not, but, or* (negative conjunctions) were **kept** to preserve sentiment.  
+- Several **non-English words** were found in the dataset.  
+- The **label distribution** does not vary significantly with **word count**. However, after **6,000 words**, most comments are **positive**, indicating that **longer comments tend to be positive**.  
+- **Word cloud analysis** revealed a high presence of **political comments**, suggesting that the trained model will likely perform better on **political YouTube channels**.  
