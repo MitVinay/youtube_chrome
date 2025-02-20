@@ -204,9 +204,8 @@ Below is the *worflow including toolstack*:
 3. **Test the API with Postman:**
    - Use Postman to test the API and ensure it returns the expected results.
 
----
 
-## Strategy to Build the Chrome Plugin
+### Strategy to Build the Chrome Plugin
 
 1. **Create a New Folder for the Chrome Plugin:**
    - Create a new directory where the Chrome plugin files will be stored.
@@ -228,7 +227,6 @@ Below is the *worflow including toolstack*:
 6. **Error Handling:**
 - If the URL is not from YouTube, display an error message saying, "Not a YouTube URL."
 
-
 ## Testing
 
 - Once the plugin is built and the logic is in place, test the plugin by opening a YouTube video in Chrome and using the plugin to fetch the comments.
@@ -238,8 +236,22 @@ Below is the *worflow including toolstack*:
 - Ensure that the YouTube API credentials are set up properly to allow access to video data.
 - Handle errors and edge cases, such as invalid video IDs or restricted videos.
 
+# Analysis 
+- Total Comments
+- Unique Commenters
+- Average Comment Length
+- Average Sentiment Score (out of 10)
+- Pie Chart of Sentiment Distribution
+- Sentiment Trend over time
+- Comment Wordcloud
+- Top 25 comments
 
 
+# Model Explanation 
+- The best-performing combination was using the **LightGBM model** with **bi-gram tokenization**.  
+- Handled **imbalanced data** using the **ADASYN (Adaptive Synthetic Sampling) technique**.  
+- Used **TF-IDF** for feature extraction.  
+- Optimized the model using **Optuna** for hyperparameter tuning, achieving the best performance.  
 
 # Architecture
 
@@ -268,13 +280,6 @@ The application's interface is designed for ease of use, enabling seamless inter
 ### Instant Exploratory Data Analysis (EDA)
 The tool performs instant EDA on user comments, offering influencers immediate, actionable insights into audience sentiment and preferences. This saves time and enhances productivity while fostering a deeper connection with viewers.
 
-### Scalability 
-The project is designed with scalability in mind, ensuring that it can handle increasing data volumes, user interactions, and evolving content analysis needs. By leveraging a robust architecture and cloud-native technologies, the system can easily scale up or down based on demand. As the user base grows or content complexity increases, the solution adapts without sacrificing performance.
-Additionally, the integration of a CI/CD workflow ensures that updates and enhancements can be delivered continuously, maintaining operational efficiency as the system scales. This approach not only streamlines maintenance but also mitigates issues like model drift and data changes, which are common challenges in growing systems.
-
-
-
-
 # Project with Action
 
 Demo link: https://drive.google.com/file/d/1npN_uNfw0DPjpdRgQM2HPfaKkceIvEU0/view?usp=sharing
@@ -291,4 +296,8 @@ Wait for the plugin to fetch and analyse the data giving you a detailed analysis
 ![Alt Text](images/step2.png)
 
 
+# Scope of Expansion
 
+### Scalability 
+The project is designed with scalability in mind, ensuring that it can handle increasing data volumes, user interactions, and evolving content analysis needs. By leveraging a robust architecture and cloud-native technologies, the system can easily scale up or down based on demand. As the user base grows or content complexity increases, the solution adapts without sacrificing performance.
+Additionally, the integration of a CI/CD workflow ensures that updates and enhancements can be delivered continuously, maintaining operational efficiency as the system scales. This approach not only streamlines maintenance but also mitigates issues like model drift and data changes, which are common challenges in growing systems.
