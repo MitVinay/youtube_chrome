@@ -76,12 +76,15 @@ The YouTube plugin application addresses two critical business metrics: marketin
 ## Appraoch 
 
 **Initial Phase:**
+
 Data Collection → Exploratory Data Analysis → Baseline Model → Experiment Tracking
 
 **Second Phase:**
+
 Monolithic Architecture:
 
 Data Ingestion → Data Preprocessing → Model Training → Model Evaluation → Model Registration
 
 **Third Phase:**
+
 Develop a Flask API for model serving, and a plugin.
