@@ -251,6 +251,19 @@ Below is the general architecture:
 ![Alt Text](images/Architecture.png)
 
 
+# Project with Action
 
+Demo link: https://drive.google.com/file/d/1npN_uNfw0DPjpdRgQM2HPfaKkceIvEU0/view?usp=sharing
+
+## Step 1:
+
+You need to open a YouTube video, go to the Extensions section, and click on the extension. The plugin will pop up.
+
+![Alt Text](images/setp1.png)
+
+## Step 2:
+Wait for the plugin to fetch and analyse the data giving you a detailed analysis.
+
+![Alt Text](images/setp2.png)
 
 
