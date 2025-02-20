@@ -190,7 +190,16 @@ Below is the **DAG of the pipeline**:
 ![Alt Text](images/Phase-2.png)
 
 Below is the *worflow including toolstack*: 
+
 ![Alt Text](images/phase22.png)
+
+
+# Architecture
+
+This simple-to-use Chrome plugin enables influencers to streamline their workflow. All they need to do is load the plugin, open a YouTube page, and let the tool analyze their video effortlessly. The plugin provides actionable insights without the need for complex setups or expensive analytics services.
+Below is the general architecture:
+
+![Alt Text](images/Architecture.png)
 
 
 
