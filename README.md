@@ -181,4 +181,14 @@ somewhere between 2000 and 5000.
 The below scatter plot suggests that the model is performing very nicely when max features is 4000. 
 
 
+## Phase 2 Flow  
+
+The primary goal of this phase is to **automate all tasks performed in Phase 1** using a **DVC pipeline**. The model will be **automatically pushed to the Model Registry** if it achieves an **accuracy above 85%**.  
+
+Below is the **DAG of the pipeline**: 
+
+![Alt Text](images/dags.png)
+
+
+
 
