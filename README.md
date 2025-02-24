@@ -65,9 +65,12 @@ The goal of the project is to develop a Youtube Chrome Plugin, This extention wi
 **You Not Just get TO the Audience but Get THROUGH the Audience**
 
 YouTube influencers face a significant challenge: understanding audience preferences and content consumption patterns to boost engagement. While marketing agencies and advanced analytics tools provide data-driven insights, these solutions are often prohibitively expensive for many influencers.
-As a result, influencers are left to manually analyze vast volumes of audience comments, a process that is not only time-consuming but also error-prone. With thousands of comments pouring in on each video, it becomes nearly impossible to identify and act on critical insights buried within the feedback. These missed opportunities could have otherwise informed content strategies, strengthened audience connections, and accelerated channel growth.
+
+As a result, influencers must manually analyze vast volumes of audience comments—a process that is not only time-consuming but also prone to errors. With thousands of comments pouring in on each video, identifying and acting on critical insights buried within the feedback becomes nearly impossible. These missed opportunities could have informed content strategies, strengthened audience connections, and accelerated channel growth.
+
 This tedious and inefficient process consumes valuable time and often leads to overlooked feedback that could have been instrumental in understanding audience needs and preferences. Influencers need a smarter, more accessible solution to unlock these insights efficiently and effectively.
-The YouTube plugin application addresses two critical business metrics: marketing cost reduction and time efficiency.
+
+The YouTube plugin application addresses two critical business metrics: reducing marketing costs and improving time efficiency.
 
 
 # Appraoch 
